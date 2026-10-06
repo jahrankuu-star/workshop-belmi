@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pendaftaran Digital Skill Workshop - UPNVJ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="upnvj.png" alt="Logo UPN Veteran Jakarta" class="logo">
+    <div class="judul">
+      <h1>Digital Skill Workshop UPNVJ</h1>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Navigasi utama">
+    <ul>
+      <li><a href="#info">Informasi Workshop</a></li>
+      <li><a href="#daftar">Pendaftaran</a></li>
+      <li><a href="#hasil">Ringkasan</a></li>
+    </ul>
+  </nav>
+
+  <main class="layout">
+
+    <section id="info" class="panel">
+      <h2>Informasi Workshop</h2>
+      <p>
+      </p>
+      <table class="price-table">
+        <caption>Daftar Workshop dan Biaya Per Peserta</caption>
+        <thead>
+          <tr><th scope="col">Workshop</th><th scope="col">Biaya</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Web Development</td><td>Rp100.000</td></tr>
+          <tr><td>UI/UX Design</td><td>Rp75.000</td></tr>
+          <tr><td>Data Analytics</td><td>Rp125.000</td></tr>
+          <tr><td>Cyber Security</td><td>Rp150.000</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="daftar" class="panel">
+      <h2>Formulir Pendaftaran</h2>
+      <form id="formDaftar" novalidate>
+        <div class="field">
+          <label for="nama">Nama Mahasiswa</label>
+          <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required>
+        </div>
+
+        <div class="field">
+          <label for="nim">NIM</label>
+          <input type="text" id="nim" name="nim" inputmode="numeric" placeholder="Contoh: 2510501017" required>
+        </div>
+
+        <div class="field">
+          <label for="prodi">Program Studi</label>
+          <select id="prodi" name="prodi" required>
+            <option value="">-- Pilih program studi --</option>
+            <option value="D3 Sistem Informasi">D3 Sistem Informasi</option>
+            <option value="S1 Informatika">S1 Informatika</option>
+            <option value="S1 Sistem Informasi">S1 Sistem Informasi</option>
+            <option value="S1 Sains Data">S1 Sains Data</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="nama@mahasiswa.upnvj.ac.id" required>
+        </div>
+
+        <div class="field">
+          <label for="workshop">Pilihan Workshop</label>
+          <select id="workshop" name="workshop" required>
+            <option value="">-- Pilih workshop --</option>
+            <option value="Web Development" data-harga="100000">Web Development (Rp100.000)</option>
+            <option value="UI/UX Design" data-harga="75000">UI/UX Design (Rp75.000)</option>
+            <option value="Data Analytics" data-harga="125000">Data Analytics (Rp125.000)</option>
+            <option value="Cyber Security" data-harga="150000">Cyber Security (Rp150.000)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="jumlah">Jumlah Peserta</label>
+          <input type="number" id="jumlah" name="jumlah" min="1" value="1" required>
+        </div>
+
+        <div id="pesanError" class="error" role="alert" hidden></div>
+
+        <button type="submit" id="btnDaftar">DAFTAR WORKSHOP</button>
+      </form>
+    </section>
+
+  </main>
+
+  <section id="hasil" class="panel result" hidden aria-live="polite">
+    <h2>Ringkasan Pendaftaran</h2>
+    <table class="summary-table">
+      <tbody>
+        <tr><th scope="row">Nama</th><td id="outNama"></td></tr>
+        <tr><th scope="row">NIM</th><td id="outNim"></td></tr>
+        <tr><th scope="row">Program Studi</th><td id="outProdi"></td></tr>
+        <tr><th scope="row">Workshop</th><td id="outWorkshop"></td></tr>
+        <tr><th scope="row">Jumlah Peserta</th><td id="outJumlah"></td></tr>
+        <tr><th scope="row">Subtotal</th><td id="outSubtotal"></td></tr>
+        <tr><th scope="row">Diskon</th><td id="outDiskon"></td></tr>
+        <tr class="total"><th scope="row">Total Bayar</th><td id="outTotal"></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <f class="site-footer">
+    <p>&copy; FAKULTAS ILMU Komputer "UPN VETERAN JAKARTA"</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
